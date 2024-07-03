@@ -23,8 +23,8 @@ export default function Home() {
   }, []);
   return (
     <div>
-      <div className="w-[390px] m-auto">
-        <LandingPage />
+      <div className="w-[390px] m-auto xl:w-[1024px]">
+        <LandingPage articles={articles} />
         <Trending articles={articles} />
         <AllBlogPost articles={articles} />
         <Footer />

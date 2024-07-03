@@ -7,13 +7,13 @@ export const Trending = ({ articles }) => {
         <div className="text-[24px] pb-[30px]">Trending</div>
         <div className="flex overflow-x-scroll gap-[20px]">
           <div className="w-fit flex gap-[20px]">
-            {articles.slice(0, 4).map((item, index) => {
+            {articles.slice(0, 8).map((item, index) => {
               return (
                 <>
                   <TrendingCard
                     img={item.cover_image}
                     desc={item.title}
-                    title={item.tags}
+                    title={item.tag_list}
                   />
                 </>
               );
