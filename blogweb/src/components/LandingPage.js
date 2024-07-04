@@ -5,8 +5,16 @@ import { Left } from "@/assets/Left";
 import { Right } from "@/assets/Right";
 import { Mag } from "@/assets/Mag";
 import { CarouselCard } from "./CarouselCard";
+import { useState } from "react";
 
 export const LandingPage = ({ articles }) => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const nextSlide = () =>
+    setCurrentSlide((prev) => (prev === 3 ? 3 : prev + 1));
+
+  const preSlide = () => setCurrentSlide((prev) => (prev === 0 ? 0 : prev - 1));
+
   return (
     <div>
       <div className="m-auto h-fit border">
@@ -33,10 +41,14 @@ export const LandingPage = ({ articles }) => {
           </div>
           <RxHamburgerMenu className="xl:hidden" />
         </header>
-        <container className="py-[24px] px-[40px]">
-          <div className="">
-            <div className="border border-red-600">
-              {articles.map((item, index) => {
+        <div className="border border-green-700">
+          <div className="w-full overflow-hidden">
+            <div
+              className={`border border-red-600 flex w-fit gap-5 m-auto 
+              }`}
+              style={{ transform: `translateX(${-currentSlide * 25}%)` }}
+            >
+              {articles.slice(0, 4).map((item, index) => {
                 return (
                   <CarouselCard
                     title={item.title}
@@ -47,10 +59,14 @@ export const LandingPage = ({ articles }) => {
               })}
             </div>
           </div>
-        </container>
+        </div>
         <div className="flex justify-center gap-[9px] xl:justify-end xl:px-12">
-          <Left />
-          <Right />
+          <button>
+            <Left onClick={preSlide} />
+          </button>
+          <button onClick={nextSlide}>
+            <Right />
+          </button>
         </div>
       </div>
     </div>
