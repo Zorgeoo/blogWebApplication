@@ -14,7 +14,9 @@ export const AllBlogPost = ({ articles }) => {
             <button>Technology</button>
             <button>Branding</button>
           </div>
-          <button className="self-center text-[12px] ">View all</button>
+          <button className="self-center text-[12px] hidden xl:block">
+            View all
+          </button>
         </div>
         <div className="flex flex-col gap-[20px] xl:grid xl:grid-cols-3">
           {articles.map((item, index) => {

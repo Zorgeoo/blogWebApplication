@@ -1,7 +1,8 @@
 import { format } from "date-fns";
-export const CarouselCard = (props, date) => {
+export const CarouselCard = (props) => {
+  const formattedDate = format(props.date, "MMMM dd,yyyy");
   return (
-    <div className="relative border w-[90%] xl:w-[1024px] border-blue-600 rounded-[12px] h-[600px] overflow-hidden m-auto">
+    <div className="relative border w-[390px] xl:w-[1024px] border-blue-600  h-[600px] overflow-hidden m-auto rounded-xl">
       <img className="absolute object-cover h-full w-full" src={props.src} />
       <div className="absolute flex flex-col bg-white rounded-[12px] bottom-[2.5%] left-[2.5%] p-[40px] w-[95%] gap-[24px] xl:w-1/2 ">
         <div>
@@ -10,7 +11,7 @@ export const CarouselCard = (props, date) => {
           </button>
           <div className="text-[36px] font-semibold">{props.title}</div>
         </div>
-        <div>{props.date}</div>
+        <div>{formattedDate}</div>
       </div>
     </div>
   );

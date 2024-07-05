@@ -11,9 +11,9 @@ export const LandingPage = ({ articles }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const nextSlide = () =>
-    setCurrentSlide((prev) => (prev === 3 ? 3 : prev + 1));
+    setCurrentSlide((next) => (next === 3 ? 0 : next + 1));
 
-  const preSlide = () => setCurrentSlide((prev) => (prev === 0 ? 0 : prev - 1));
+  const preSlide = () => setCurrentSlide((prev) => (prev === 0 ? 3 : prev - 1));
 
   return (
     <div>
@@ -42,9 +42,9 @@ export const LandingPage = ({ articles }) => {
           <RxHamburgerMenu className="xl:hidden" />
         </header>
         <div className="border border-green-700">
-          <div className="w-full overflow-hidden">
+          <div className="w-full overflow-hidden rounded-xl">
             <div
-              className={`border border-red-600 flex w-fit gap-5 m-auto 
+              className={`border border-red-600 flex w-fit m-auto 
               }`}
               style={{ transform: `translateX(${-currentSlide * 25}%)` }}
             >
@@ -60,9 +60,9 @@ export const LandingPage = ({ articles }) => {
             </div>
           </div>
         </div>
-        <div className="flex justify-center gap-[9px] xl:justify-end xl:px-12">
-          <button>
-            <Left onClick={preSlide} />
+        <div className="flex justify-center gap-[9px] border xl:justify-end">
+          <button onClick={preSlide}>
+            <Left />
           </button>
           <button onClick={nextSlide}>
             <Right />
