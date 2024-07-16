@@ -13,7 +13,9 @@ export const Card = ({ cover, tag, desc, date }) => {
         <div>
           <Button tags={tag} bg="bg-[#f7f8ff]" color="text-[#4B6BFB]" />
         </div>
-        <div className="text-[24px] font-semibold">{desc}</div>
+        <div className="text-[24px] font-semibold h-20 overflow-hidden">
+          {desc}
+        </div>
         <div className="text-[16px] text-[#97989F]">{formattedDate}</div>
       </div>
     </div>

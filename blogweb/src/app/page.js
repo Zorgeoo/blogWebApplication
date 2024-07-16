@@ -3,7 +3,6 @@ import { AllBlogPost } from "@/components/AllBlogPost";
 import { Footer } from "@/components/Footer";
 import { LandingPage } from "@/components/LandingPage";
 import { Trending } from "@/components/Trending";
-import Image from "next/image";
 import { useEffect, useState } from "react";
 
 const getArticle = async () => {
@@ -23,7 +22,7 @@ export default function Home() {
   }, []);
   return (
     <div>
-      <div className="w-[390px] m-auto xl:w-[1024px]">
+      <div className="">
         <LandingPage articles={articles} />
         <Trending articles={articles} />
         <AllBlogPost articles={articles} />

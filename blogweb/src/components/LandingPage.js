@@ -6,6 +6,7 @@ import { Right } from "@/assets/Right";
 import { Mag } from "@/assets/Mag";
 import { CarouselCard } from "./CarouselCard";
 import { useState } from "react";
+import Link from "next/link";
 
 export const LandingPage = ({ articles }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -16,14 +17,16 @@ export const LandingPage = ({ articles }) => {
   const preSlide = () => setCurrentSlide((prev) => (prev === 0 ? 3 : prev - 1));
 
   return (
-    <div>
+    <div className="w-[390px] m-auto xl:w-[1024px]">
       <div className="m-auto h-fit border">
         <header className="flex justify-between items-center p-[20px]">
           <Logo />
           <div className="hidden xl:block">
             <div className="flex gap-10">
               <div>Home</div>
-              <div>Blog</div>
+              <Link href={"/blogs"}>
+                <button>Blog</button>
+              </Link>
               <div>Contact</div>
             </div>
           </div>
