@@ -18,36 +18,45 @@ export const LandingPage = ({ articles }) => {
 
   return (
     <div className="w-[390px] m-auto xl:w-[1024px]">
-      <div className="m-auto h-fit border">
-        <header className="flex justify-between items-center p-[20px]">
-          <Logo />
+      <div className="m-auto h-fit">
+        <header className="flex justify-between items-center p-[20px] pb-[100px]">
+          <Link href={"/404"}>
+            <button>
+              <Logo />
+            </button>
+          </Link>
+
           <div className="hidden xl:block">
             <div className="flex gap-10">
-              <div>Home</div>
+              <Link href={"/"}>
+                <button>Home</button>
+              </Link>
               <Link href={"/blogs"}>
                 <button>Blog</button>
               </Link>
-              <div>Contact</div>
+              <Link href={"/contact"}>
+                <button>Contact</button>
+              </Link>
             </div>
           </div>
           <div className="hidden xl:block">
             <div className="flex items-center rounded-[5px] overflow-hidden">
               <input
                 type="text"
-                placeholder="search"
-                className="bg-[#f4f4f5] w-21"
+                placeholder="Search"
+                className="bg-[#f4f4f5] xl:w-40 px-2 py-2"
               ></input>
-              <div className="bg-[#f4f4f5] p-1 ">
+              <div className="bg-[#f4f4f5] py-3 px-2 ">
                 <Mag />
               </div>
             </div>
           </div>
           <RxHamburgerMenu className="xl:hidden" />
         </header>
-        <div className="border border-green-700">
+        <div className="">
           <div className="w-full overflow-hidden rounded-xl">
             <div
-              className={`border border-red-600 flex w-fit m-auto 
+              className={`flex w-fit m-auto 
               }`}
               style={{ transform: `translateX(${-currentSlide * 25}%)` }}
             >
@@ -63,7 +72,7 @@ export const LandingPage = ({ articles }) => {
             </div>
           </div>
         </div>
-        <div className="flex justify-center gap-[9px] border xl:justify-end">
+        <div className="flex justify-center gap-[9px] xl:justify-end pt-3">
           <button onClick={preSlide}>
             <Left />
           </button>

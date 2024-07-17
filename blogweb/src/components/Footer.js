@@ -8,21 +8,21 @@ export const Footer = () => {
   return (
     <div className="bg-[#f6f6f7]">
       <div className="px-[16px] py-[64px] w-[390px] m-auto xl:w-[1024px]">
-        <div className="flex flex-col gap-[150px] py-[32px] xl:flex-row xl:justify-start">
+        <div className="flex flex-col gap-[150px] py-[32px] xl:flex-row xl:justify-between">
           <div className="xl:w-1/4 flex flex-col gap-5">
             <div className="pb-[20px] ">About</div>
-            <div>
+            <div className="text-[#696A75]">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
               enim ad minim veniam
             </div>
-            <div>
+            <div className="text-[#696A75]">
               <div>Email : info@jstemplate.net</div>
               <div>Phone : 880 123 456 789</div>
             </div>
           </div>
           <div>
-            <div className="flex gap-[24px]">
+            <div className="flex flex-col gap-[24px] text-[#696A75]">
               <div>Home</div>
               <div>Blog</div>
               <div>Contact</div>
@@ -46,7 +46,7 @@ export const Footer = () => {
               <div>© All Rights Reserved.</div>
             </div>
           </div>
-          <div className="flex flex-col gap-[16px] pt-[64px] xl:pt-0 xl:flex-row">
+          <div className="flex flex-col gap-[16px] pt-[64px] xl:pt-0 xl:flex-row text-[#696A75]">
             <div>Terms of use </div>
             <div>Privacy Policy</div>
             <div>Cookie Policy</div>

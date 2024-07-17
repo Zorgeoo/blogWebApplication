@@ -1,6 +1,6 @@
 "use client";
 
-import { useParams } from "next/navigation";
+import { notFound, useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Logo } from "@/assets/Logo";
 import Link from "next/link";
@@ -21,9 +21,8 @@ const Page = () => {
     };
     getData();
   }, []);
+
   const now = data?.published_at;
-  console.log(now);
-  const formattedDate = format(now, "MMMM dd, yyyy");
 
   return (
     <div>
@@ -32,11 +31,15 @@ const Page = () => {
           <Logo />
           <div className="hidden xl:block">
             <div className="flex gap-10">
-              <div>Home</div>
+              <Link href={"/"}>
+                <button>Home</button>
+              </Link>
               <Link href={"/blogs"}>
                 <button>Blog</button>
               </Link>
-              <div>Contact</div>
+              <Link href={"/contact"}>
+                <button>Contact</button>
+              </Link>
             </div>
           </div>
           <div className="hidden xl:block">
@@ -44,7 +47,7 @@ const Page = () => {
               <input
                 type="text"
                 placeholder="search"
-                className="bg-[#f4f4f5] w-21"
+                className="bg-[#f4f4f5] xl:w-40"
               ></input>
               <div className="bg-[#f4f4f5] p-1 ">
                 <Mag />
@@ -53,8 +56,8 @@ const Page = () => {
           </div>
           <RxHamburgerMenu className="xl:hidden" />
         </header>
-        <div className="py-28">
-          <h1 className="text-4xl">{data?.title}</h1>
+        <div className="py-28 xl:w-[850px] m-auto">
+          <h1 className="text-4xl font-semibold">{data?.title}</h1>
           <div className="flex pt-6 pb-8 gap-6">
             <div className="flex gap-2">
               <div className="h-7 w-7 rounded-[28px] overflow-hidden">
@@ -62,7 +65,7 @@ const Page = () => {
               </div>
               <div>{data?.user.name}</div>
             </div>
-            <div>{formattedDate}</div>
+            {now && <div>{format(now, "MMMM dd, yyyy")}</div>}
           </div>
           <img className="rounded-xl w-full pb-8" src={data?.cover_image} />
           <div>
