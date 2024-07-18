@@ -29,7 +29,7 @@ export const LandingPage = ({ articles }) => {
   };
 
   return (
-    <div className="w-[390px] m-auto xl:w-[1024px]">
+    <div className="w-[390px] m-auto xl:w-[1024px] overflow-hidden">
       <div className="m-auto h-fit">
         <header className="flex justify-between items-center p-[20px] pb-[100px] overflow-hidden">
           <button>
