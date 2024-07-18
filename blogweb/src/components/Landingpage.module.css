@@ -1,0 +1,9 @@
+.open {
+  transform: translateX(-250px);
+  z-index: 10;
+  position: fixed;
+  color: black;
+  box-shadow: -50px 0px 30px 15px #00000024;
+  top: 0;
+  transition: 0.5s ease-in-out;
+}

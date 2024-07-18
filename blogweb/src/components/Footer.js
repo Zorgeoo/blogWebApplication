@@ -4,6 +4,7 @@ import { FaFacebook } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
+import Link from "next/link";
 export const Footer = () => {
   return (
     <div className="bg-[#f6f6f7]">
@@ -29,10 +30,18 @@ export const Footer = () => {
             </div>
           </div>
           <div className="flex gap-[26.67px] text-[16px]">
-            <FaFacebook />
-            <FaTwitter />
-            <FaInstagram />
-            <FaLinkedin />
+            <Link href="https://facebook.com">
+              <FaFacebook />
+            </Link>
+            <Link href="https://twitter.com">
+              <FaTwitter />
+            </Link>
+            <Link href="https://instagram.com">
+              <FaInstagram />
+            </Link>
+            <Link href="https://linkedin.com">
+              <FaLinkedin />
+            </Link>
           </div>
         </div>
         <div className="py-[32px] border-t xl:flex xl:justify-between">

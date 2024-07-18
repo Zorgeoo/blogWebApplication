@@ -1,4 +1,5 @@
 import { TrendingCard } from "./TrendingCard";
+import Link from "next/link";
 export const Trending = ({ articles }) => {
   return (
     <div className="w-[390px] m-auto xl:w-[1024px]">
@@ -9,11 +10,13 @@ export const Trending = ({ articles }) => {
             {articles.slice(0, 8).map((item, index) => {
               return (
                 <>
-                  <TrendingCard
-                    img={item.cover_image}
-                    desc={item.title}
-                    title={item.tag_list}
-                  />
+                  <Link key={item.id} href={`/blogs/${item.id}`}>
+                    <TrendingCard
+                      img={item.cover_image}
+                      desc={item.title}
+                      title={item.tag_list}
+                    />
+                  </Link>
                 </>
               );
             })}

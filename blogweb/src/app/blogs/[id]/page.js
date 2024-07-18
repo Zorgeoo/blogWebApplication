@@ -8,6 +8,7 @@ import { Mag } from "@/assets/Mag";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { Footer } from "@/components/Footer";
 import { format } from "date-fns";
+import styles from "@/components/Landingpage.module.css";
 
 const Page = () => {
   const { id } = useParams();
@@ -23,12 +24,20 @@ const Page = () => {
   }, []);
 
   const now = data?.published_at;
-
+  const [drawer, setDrawer] = useState(false);
+  const handleDrawer = () => {
+    setDrawer(!drawer);
+    console.log("HI");
+  };
   return (
     <div>
       <div className="w-[390px] m-auto xl:w-[1024px]">
-        <header className="flex justify-between items-center py-8">
-          <Logo />
+        <header className="flex justify-between items-center p-[20px] pb-[100px]">
+          <Link href={"/404"}>
+            <button>
+              <Logo />
+            </button>
+          </Link>
           <div className="hidden xl:block">
             <div className="flex gap-10">
               <Link href={"/"}>
@@ -46,15 +55,39 @@ const Page = () => {
             <div className="flex items-center rounded-[5px] overflow-hidden">
               <input
                 type="text"
-                placeholder="search"
-                className="bg-[#f4f4f5] xl:w-40"
+                placeholder="Search"
+                className="bg-[#f4f4f5] xl:w-40 px-2 py-2"
               ></input>
-              <div className="bg-[#f4f4f5] p-1 ">
+              <div className="bg-[#f4f4f5] py-3 px-2 ">
                 <Mag />
               </div>
             </div>
           </div>
-          <RxHamburgerMenu className="xl:hidden" />
+          <div onClick={handleDrawer} className="xl:hidden">
+            <RxHamburgerMenu className="xl:hidden z-30" />
+            <div
+              className={`xl:hidden  h-screen absolute  w-[250px]  left-[100%] ease-in-out duration-500 transition top-0 z-20 bg-[#f6f6f6] ${
+                drawer ? styles.open : ""
+              }`}
+            >
+              <div className="flex justify-end">
+                <button onClick={handleDrawer} className="p-4 mr-3">
+                  X
+                </button>
+              </div>
+              <div className="flex flex-col gap-10 pl-5">
+                <Link href={"/"}>
+                  <button>Home</button>
+                </Link>
+                <Link href={"/blogs"}>
+                  <button>Blog</button>
+                </Link>
+                <Link href={"/contact"}>
+                  <button>Contact</button>
+                </Link>
+              </div>
+            </div>
+          </div>
         </header>
         <div className="py-28 xl:w-[850px] m-auto">
           <h1 className="text-4xl font-semibold">{data?.title}</h1>
@@ -116,6 +149,10 @@ const Page = () => {
               euismod elementum nisi quis eleifend quam adipiscing vitae.
               Viverra adipiscing at in tellus.
             </p>
+            <div
+              className="mt-[32px] text-[#3B3C4A] text-[18px] flex flex-col items-start gap-6 [&>p]:text-[20px] [&>h3]:font-semibold [&>img]:self-center"
+              dangerouslySetInnerHTML={{ __html: data?.body_html }}
+            />
           </div>
         </div>
       </div>
