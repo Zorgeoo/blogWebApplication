@@ -66,7 +66,7 @@ const Page = () => {
           <div onClick={handleDrawer} className="xl:hidden">
             <RxHamburgerMenu className="xl:hidden z-30" />
             <div
-              className={`xl:hidden  h-screen absolute  w-[250px]  left-[100%] ease-in-out duration-500 transition top-0 z-20 bg-[#f6f6f6] ${
+              className={`xl:hidden  h-screen absolute npw-[250px]  left-[100%] ease-in-out duration-500 transition top-0 z-20 bg-[#f6f6f6] ${
                 drawer ? styles.open : ""
               }`}
             >
@@ -106,8 +106,8 @@ const Page = () => {
               Traveling is an enriching experience that opens up new horizons,
               exposes us to different cultures, and creates memories that last a
               lifetime. However, traveling can also be stressful and
-              overwhelming, especially if you don't plan and prepare adequately.
-              In this blog article, we'll explore tips and tricks for a
+              overwhelming, especially if you dont plan and prepare adequately.
+              In this blog article, we will explore tips and tricks for a
               memorable journey and how to make the most of your travels. One of
               the most rewarding aspects of traveling is immersing yourself in
               the local culture and customs. This includes trying local cuisine,

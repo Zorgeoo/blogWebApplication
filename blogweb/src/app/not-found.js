@@ -42,8 +42,8 @@ const notFound = () => {
         <div className="flex flex-col gap-[20px] w-[35%]">
           <div className="text-2xl font-semibold">Page Not Found</div>
           <div className="text-[18px] text-[#696A75]">
-            We're sorry, This page is unknown or does not exist the page you are
-            looking for.
+            We are sorry, This page is unknown or does not exist the page you
+            are looking for.
           </div>
           <Link href={"/"}>
             <button className="self-start bg-[#4B6BFB] text-white py-[10px] px-[16px] rounded-md">

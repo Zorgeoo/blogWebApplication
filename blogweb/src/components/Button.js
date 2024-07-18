@@ -4,6 +4,7 @@ export const Button = (props) => {
       {props.tags &&
         props.tags.map((item) => (
           <div
+            key={item.id}
             className={`py-[4px] px-[10px] ${props.bg} ${props.color} w-fit rounded-[6px]`}
           >
             {item}
