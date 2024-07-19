@@ -9,6 +9,10 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import { Footer } from "@/components/Footer";
 import { format } from "date-fns";
 import styles from "@/components/Landingpage.module.css";
+import { FaFacebook } from "react-icons/fa";
+import { FaTwitter } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
 
 const Page = () => {
   const [drawer, setDrawer] = useState(false);
@@ -18,12 +22,10 @@ const Page = () => {
   };
   return (
     <div>
-      <header className="flex justify-between items-center p-[20px] pb-[100px] w-[390px] m-auto xl:w-[1024px]">
-        <Link href={"/404"}>
-          <button>
-            <Logo />
-          </button>
-        </Link>
+      <header className="flex justify-between items-center p-[20px] pb-[100px] overflow-hidden w-[390px] m-auto xl:w-[1024px]">
+        <button>
+          <Logo />
+        </button>
         <div className="hidden xl:block">
           <div className="flex gap-10">
             <Link href={"/"}>
@@ -52,14 +54,20 @@ const Page = () => {
         <div onClick={handleDrawer} className="xl:hidden">
           <RxHamburgerMenu className="xl:hidden z-30" />
           <div
-            className={`xl:hidden  h-screen absolute w-[250px] left-[100%] ease-in-out duration-500 transition top-0 z-20 bg-[#f6f6f6] ${
+            className={`hidden h-screen absolute w-[250px] left-[100%] ease-in-out duration-500 transition top-0 z-20 bg-[#f6f6f6] ${
               drawer ? styles.open : ""
             }`}
           >
-            <div className="flex justify-end">
-              <button onClick={handleDrawer} className="p-4 mr-3">
-                X
-              </button>
+            <div className="flex">
+              <div className="flex py-5 items-center justify-between w-full px-4 relative">
+                <Logo />
+                <button
+                  onClick={handleDrawer}
+                  className="p-4 mr-3 absolute right-1 top-1"
+                >
+                  X
+                </button>
+              </div>
             </div>
             <div className="flex flex-col gap-10 pl-5">
               <Link href={"/"}>
@@ -71,6 +79,22 @@ const Page = () => {
               <Link href={"/contact"}>
                 <button>Contact</button>
               </Link>
+            </div>
+            <div>
+              <div className="flex gap-[26.67px] text-[16px] w-fit pt-8 m-auto">
+                <Link href="https://facebook.com">
+                  <FaFacebook />
+                </Link>
+                <Link href="https://twitter.com">
+                  <FaTwitter />
+                </Link>
+                <Link href="https://instagram.com">
+                  <FaInstagram />
+                </Link>
+                <Link href="https://linkedin.com">
+                  <FaLinkedin />
+                </Link>
+              </div>
             </div>
           </div>
         </div>

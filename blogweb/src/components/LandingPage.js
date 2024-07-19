@@ -63,7 +63,7 @@ export const LandingPage = ({ articles }) => {
           <div onClick={handleDrawer} className="xl:hidden">
             <RxHamburgerMenu className="xl:hidden z-30" />
             <div
-              className={`xl:hidden  h-screen absolute w-[250px] left-[100%] ease-in-out duration-500 transition top-0 z-20 bg-[#f6f6f6] ${
+              className={`hidden h-screen absolute w-[250px] left-[100%] ease-in-out duration-500 transition top-0 z-20 bg-[#f6f6f6] ${
                 drawer ? styles.open : ""
               }`}
             >

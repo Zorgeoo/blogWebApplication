@@ -71,7 +71,7 @@ export const AllBlogPost = () => {
           </div>
           <Link href={"/blogs"}>
             <div className="hidden xl:block">
-              <button className="self-center text-xs hidden xl:block">
+              <button className="self-center text-xs hidden xl:block hover:scale-125 duration-500">
                 View all
               </button>
             </div>

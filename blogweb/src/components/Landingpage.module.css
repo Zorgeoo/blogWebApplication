@@ -6,4 +6,5 @@
   box-shadow: -50px 0px 30px 15px #00000024;
   top: 0;
   transition: 0.5s ease-in-out;
+  display: block;
 }
